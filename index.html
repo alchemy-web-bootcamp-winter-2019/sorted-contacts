@@ -12,6 +12,19 @@
         <h1>Sorted Contacts</h1>
     </header>
     <main>
+        <p>
+            Sort by: 
+            <select id="sort-select">
+                <option value="" selected disabled>Select a sorting option</option>
+                <option value="fistName">First Name</option>
+                <option value="lastName">Last Name</option>
+                <option value="company">Company</option>
+                <option value="email">Email</option>
+                <option value="favoriteFruit">Fav Fruit</option>
+                <option value="balance">Balance</option>
+                <option value="isActive">Active</option>
+            </select>
+        </p>
         <table>
             <thead>
                 <tr>
@@ -24,35 +37,7 @@
                     <th>Active</th>
                 </tr>
             </thead>
-            <tbody id="contacts-table-body">
-                <tr>
-                    <td>Cantu</td>
-                    <td>Sullivan</td>
-                    <td>IDETICA</td>
-                    <td>cantu.sullivan@idetica.com</td>
-                    <td>Banana</td>
-                    <td>$2,559.99</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td>Howard</td>
-                    <td>Sullivan</td>
-                    <td>IDETICA</td>
-                    <td>cantu.sullivan@idetica.com</td>
-                    <td>Apple</td>
-                    <td>$2,559.99</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td>Cantu</td>
-                    <td>Sullivan</td>
-                    <td>IDETICA</td>
-                    <td>cantu.sullivan@idetica.com</td>
-                    <td>Banana</td>
-                    <td>$2,559.99</td>
-                    <td>No</td>
-                </tr>
-            </tbody>
+            <tbody id="contacts-table-body"></tbody>
         </table>
     </main>
     <script type="module" src="src/index.js"></script>

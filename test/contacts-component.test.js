@@ -1,26 +1,8 @@
+import { createContactRow, capitalizeFirstLetter } from '../src/contacts-component.js';
+
 const test = QUnit.test;
 
 QUnit.module('creating contact table row doms');
-
-function createContactRow(contact) {
-    const currency = { style: 'currency', currency: 'USD' };
-    const html = /*html*/`
-        <tr>
-            <td>${contact.firstName}</td>
-            <td>${contact.lastName}</td>
-            <td>${contact.company}</td>
-            <td>${contact.email}</td>
-            <td>${capitalizeFirstLetter(contact.favoriteFruit)}</td>
-            <td>${contact.balance.toLocaleString('en-US', currency)}</td>
-            <td>${contact.isActive ? 'Yes' : 'No'}</td>
-        </tr>
-    `;
-
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    const dom = template.content;
-    return dom;
-}
 
 test('create contact row', assert => {
     // arrange
@@ -56,10 +38,6 @@ test('create contact row', assert => {
     // assert
     assert.htmlEqual(result, expected);
 });
-
-function capitalizeFirstLetter(word) {
-    return word[0].toUpperCase() + word.slice(1);
-}
 
 test('capitalize first letter', assert => {
     // arrange
