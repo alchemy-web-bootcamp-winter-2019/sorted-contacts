@@ -2,17 +2,17 @@ const test = QUnit.test;
 
 QUnit.module('sort contacts');
 
-function sortByFirstName(contacts) {
-    const sortedContacts = contacts.sort((a, b) => {
-        if(a.firstName === b.firstName) {
+function sortByProperty(contacts, sortChoices) {
+    const property = sortChoices.property;
+    return contacts.sort((a, b) => {
+        if(a[property] === b[property]) {
             return 0;
         }
-        if(a.firstName > b.firstName) {
+        if(a[property] > b[property]) {
             return 1;
         }
         return -1;
     });
-    return sortedContacts;
 }
 
 const contacts = [
@@ -23,39 +23,32 @@ const contacts = [
 
 test('sort by first name', assert => {
     // arrange
+    const sortChoices = {
+        property: 'firstName'
+    };
     const expected = [
         { firstName: 'Andrew', balance: 5 },
         { firstName: 'Lois', balance: 6 },
         { firstName: 'Unis', balance: 1 }
     ];
     // act
-    const result = sortByFirstName(contacts);
+    const result = sortByProperty(contacts, sortChoices);
     // assert
     assert.deepEqual(result, expected);
 });
 
-function sortByBalance(contacts) {
-    const sortedContacts = contacts.sort((a, b) => {
-        if(a.balance === b.balance) {
-            return 0;
-        }
-        if(a.balance > b.balance) {
-            return 1;
-        }
-        return -1;
-    });
-    return sortedContacts;
-}
-
 test('sort by balance', assert => {
     // arrange
+    const sortChoices = {
+        property: 'balance'
+    };
     const expected = [
         { firstName: 'Unis', balance: 1 },
         { firstName: 'Andrew', balance: 5 },
         { firstName: 'Lois', balance: 6 }
     ];
     // act
-    const result = sortByBalance(contacts);
+    const result = sortByProperty(contacts, sortChoices);
     // assert
     assert.deepEqual(result, expected);
 });
