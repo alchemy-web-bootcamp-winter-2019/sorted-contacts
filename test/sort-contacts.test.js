@@ -15,13 +15,14 @@ function sortByFirstName(contacts) {
     return sortedContacts;
 }
 
+const contacts = [
+    { firstName: 'Andrew', balance: 5 },
+    { firstName: 'Unis', balance: 1 },
+    { firstName: 'Lois', balance: 6 }
+];
+
 test('sort by first name', assert => {
     // arrange
-    const contacts = [
-        { firstName: 'Andrew', balance: 5 },
-        { firstName: 'Unis', balance: 1 },
-        { firstName: 'Lois', balance: 6 }
-    ];
     const expected = [
         { firstName: 'Andrew', balance: 5 },
         { firstName: 'Lois', balance: 6 },
@@ -29,6 +30,32 @@ test('sort by first name', assert => {
     ];
     // act
     const result = sortByFirstName(contacts);
+    // assert
+    assert.deepEqual(result, expected);
+});
+
+function sortByBalance(contacts) {
+    const sortedContacts = contacts.sort((a, b) => {
+        if(a.balance === b.balance) {
+            return 0;
+        }
+        if(a.balance > b.balance) {
+            return 1;
+        }
+        return -1;
+    });
+    return sortedContacts;
+}
+
+test('sort by balance', assert => {
+    // arrange
+    const expected = [
+        { firstName: 'Unis', balance: 1 },
+        { firstName: 'Andrew', balance: 5 },
+        { firstName: 'Lois', balance: 6 }
+    ];
+    // act
+    const result = sortByBalance(contacts);
     // assert
     assert.deepEqual(result, expected);
 });
