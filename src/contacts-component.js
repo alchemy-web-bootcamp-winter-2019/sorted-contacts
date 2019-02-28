@@ -4,8 +4,8 @@ export function makeTableRow(contact) {
     const template = document.createElement('template');
     
     template.innerHTML = `<tr>
-    <td>true</td>
-    <td>$2,559.99</td>
+    <td>${contact.isActive ? 'Yes' : 'No'}</td>
+    <td>$${contact.balance.toLocaleString()}</td>
     <td><img src="${contact.picture}"></td>
     <td>${contact.age}</td>
     <td>${contact.firstName}</td>

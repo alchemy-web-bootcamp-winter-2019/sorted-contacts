@@ -22,7 +22,7 @@ const contact = {
 test('make table row with template and interpolation', assert => {
     
     const expected = `<tr>
-    <td>true</td>
+    <td>Yes</td>
     <td>$2,559.99</td>
     <td><img src="http://placehold.it/32x32"></td>
     <td>28</td>
