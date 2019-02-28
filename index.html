@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorted Contacts</title>
-    <link rel="stylesheet" href="src/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./src/main.css">
+    <title>Contact Sort</title>
 </head>
-<body>
-    <header>
-        <img src="assets/alchemy-logo.png" alt="Alchemy Code Lab Logo">
-        <h1>Sorted Contacts</h1>
-    </header>
 
-    <script type="module" src="src/index.js"></script>
+<body>
+    <main>
+    <header>Sorted Contacts</header>
+    <table>
+            <tr>
+                <th>Active</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Fruit</th>
+            </tr>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    </main>
+<script type="module" src="./src/index.js"></script>
 </body>
 </html>
