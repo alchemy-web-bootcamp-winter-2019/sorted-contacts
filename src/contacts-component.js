@@ -1,3 +1,4 @@
+import contacts from '../data/contacts.js';
 
 export function makeContactRow(contact) {
     const currencyOption = { style: 'currency', currency: 'USD' };
@@ -16,6 +17,11 @@ export function makeContactRow(contact) {
     return template.content;
 }
 
+const contactTableBody = document.getElementById('contact-table-body');
+
 export default function loadContacts(contacts) {
-    console.log(contacts);
+    contacts.forEach(contact => {
+        const dom = makeContactRow(contact);
+        contactTableBody.appendChild(dom);
+    });
 }
