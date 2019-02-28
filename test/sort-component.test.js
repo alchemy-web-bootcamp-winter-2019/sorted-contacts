@@ -8,10 +8,23 @@ const contacts = [
 
 function sortName(contacts) {
     return contacts.sort((a, b) => {
-        if(a.name === b.name) {
+        if(a.firstName === b.firstName) {
             return 0;
         }
-        if(a.name > b.name) {
+        if(a.firstName > b.firstName) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    });
+}
+function sortAge(contacts) {
+    return contacts.sort((a, b) => {
+        if(a.age === b.age) {
+            return 0;
+        }
+        if(a.age > b.age) {
             return 1;
         }
         else {
@@ -21,14 +34,23 @@ function sortName(contacts) {
 }
 
 test ('sort contacts by name', assert => {
-    //arrange
     const expected = [ 
         { firstName: 'Cade', age: 40 },
         { firstName: 'Dave', age: 30 },
         { firstName: 'Ed', age: 20 }
     ];
-    //act
     const result = sortName(contacts);
-    //assert
+
+    assert.deepEqual(result, expected);
+});
+
+test ('sort contacts by age', assert => {
+    const expected = [
+        { firstName: 'Ed', age: 20 },
+        { firstName: 'Dave', age: 30 },
+        { firstName: 'Cade', age: 40 }
+    ];
+    const result = sortAge(contacts);
+
     assert.deepEqual(result, expected);
 });
