@@ -30,8 +30,7 @@ test('make table row with template and interpolation', assert => {
     <td>Sullivan</td>
     <td>IDETICA</td>
     <td>cantu.sullivan@idetica.com</td>
-    <td>Banana</td>
-</tr>`;
+    <td>Banana</td> </tr>`;
 
     const result = makeTableRow(contact);
 
