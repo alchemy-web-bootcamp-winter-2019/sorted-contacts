@@ -20,32 +20,6 @@ function sortContacts(contacts, sortChoice) {
     });
 }
 
-
-// function sortByFirstName(contacts) {
-//     return contacts.sort((a, b) => {
-//         if(a.firstName === b.firstName) {
-//             return 0;
-//         }
-//         if(a.firstName > b.firstName) {
-//             return 1;
-//         }
-//         return -1;
-//     });
-// }
-
-// function sortByAge(contacts) {
-//     return contacts.sort((a, b) => {
-//         if(a.age === b.age) {
-//             return 0;
-//         }
-//         if(a.age > b.age) {
-//             return 1;
-//         }
-//         return -1;
-//     });
-// }
-
-
 test('sort by first name', assert => {
 
     const sortChoice = {

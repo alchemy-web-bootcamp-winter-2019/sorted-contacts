@@ -11,23 +11,35 @@
         <img src="assets/alchemy-logo.png" alt="Alchemy Code Lab Logo">
         <h1>Sorted Contacts</h1>
     </header>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Active</th>
-                <th>Balance</th>
-                <th>Avatar</th>
-                <th>Age</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Company</th>
-                <th>Email</th>
-                <th>Fruit</th>
-            </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-    </table>
+    <main>
+        <select id="sort-select">
+            <option disabled selected value="">Select An Option</option>
+            <option value="isActive">Active Account</option>
+            <option value="balance">Balance</option>
+            <option value="age">Age</option>
+            <option value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="company">Company</option>
+            <option value="email">Email</option>
+            <option value="favoriteFruit">Favorite Fruit</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Active</th>
+                    <th>Balance</th>
+                    <th>Avatar</th>
+                    <th>Age</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Fruit</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </main>
 
     <script type="module" src="src/index.js"></script>
 </body>
