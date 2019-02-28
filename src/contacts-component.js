@@ -18,6 +18,9 @@ export function makeTableRow(contact) {
     return template.content;
 }
 export default function loadContacts(contacts) {
+    while(tableBodyNode.children.length > 0) {
+        tableBodyNode.lastElementChild.remove();
+    }
     contacts.forEach(contact => {
         const newRow = makeTableRow(contact);
         tableBodyNode.appendChild(newRow);   

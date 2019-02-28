@@ -1,3 +1,4 @@
+import sortContacts from '../src/sort-contacts.js';
 const test = QUnit.test;
 
 const contacts = [
@@ -5,20 +6,6 @@ const contacts = [
     { firstName: 'Xavier', age: 56 },
     { firstName: 'Billy', age: 72 }
 ];
-
-function sortContacts(contacts, sortChoice) {
-    const property = sortChoice.property;
-
-    return contacts.sort((a, b) => {
-        if(a[property] === b[property]) {
-            return 0;
-        }
-        if(a[property] > b[property]) {
-            return 1;
-        }
-        return -1;
-    });
-}
 
 test('sort by first name', assert => {
 
