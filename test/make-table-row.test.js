@@ -1,5 +1,7 @@
 const test = QUnit.test;
 
+import { makeTableRow } from '../src/contacts-component.js';
+
 const contact = {
     "_id": "5c75a7b05ef279a15486ff42",
     "isActive": true,
@@ -16,24 +18,6 @@ const contact = {
     "about": "Minim exercitation nisi ullamco consequat fugiat aute sit amet aute eu nisi. Nulla ad dolor ut fugiat sit sint commodo. Sint duis ullamco labore aute pariatur aute velit consequat elit proident sit aute est. In in culpa velit quis enim occaecat. Veniam esse laboris irure consequat. Laborum dolore nulla excepteur aute sit minim sit voluptate labore non esse cupidatat exercitation. Eiusmod incididunt consectetur quis proident.",
     "favoriteFruit": "banana"
 };
-
-function makeTableRow(contact) {
-    const template = document.createElement('template');
-
-    template.innerHTML = `<tr>
-    <td>true</td>
-    <td>$2,559.99</td>
-    <td><img src="${contact.picture}"></td>
-    <td>${contact.age}</td>
-    <td>${contact.firstName}</td>
-    <td>${contact.lastName}</td>
-    <td>${contact.company}</td>
-    <td>${contact.email}</td>
-    <td>${contact.favoriteFruit.charAt(0).toUpperCase() + contact.favoriteFruit.slice(1)}</td>
-</tr>`;
-
-    return template.content;
-}
 
 test('make table row with template and interpolation', assert => {
     
