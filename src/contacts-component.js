@@ -22,9 +22,16 @@ export function capitalizeFirstLetter(word) {
     return word[0].toUpperCase() + word.slice(1);
 }
 
+function clearContacts() {
+    while(contactTableBody.children.length > 0) {
+        contactTableBody.lastElementChild.remove();
+    }
+}
+
 const contactTableBody = document.getElementById('contacts-table-body');
 
 export default function loadContacts(contacts) {
+    clearContacts();
     contacts.forEach(contact => {
         const dom = createContactRow(contact);
         contactTableBody.appendChild(dom);
