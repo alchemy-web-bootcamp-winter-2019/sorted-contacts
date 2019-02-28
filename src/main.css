@@ -29,3 +29,7 @@ table {
 tr:nth-child(even) {
     background-color: rgba(100, 148, 237, 0.308)
 }
+
+.capitalize {
+    text-transform: capitalize;
+}
