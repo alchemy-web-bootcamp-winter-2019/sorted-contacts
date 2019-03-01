@@ -1,11 +1,12 @@
 const test = QUnit.test;
 
-function sortByFirstName(contacts) {
+function sortContacts(contacts, sortChoice) {
+    const property = sortChoice.property;
     return contacts.sort((a, b) => {
-        if(a.name === b.name) {
+        if(a[property] === b[property]) {
             return 0;
         }
-        if(a.name > b.name) {
+        if(a[property] > b[property]) {
             return 1;
         }
         return -1;
@@ -13,20 +14,9 @@ function sortByFirstName(contacts) {
 
 }
 
-function sortByAge(contacts) {
-    return contacts.sort((a, b) => {
-        if(a.age === b.age) {
-            return 0;
-        }
-        if(a.age > b.age) {
-            return 1;
-        }
-        return -1;
-    });
-
-}
 test('sort by first name', assert => {
     //arrange
+    const sortChoice = { property: 'name' };
     const contacts = [{
         name: 'Megan',
         age: 1
@@ -53,13 +43,14 @@ test('sort by first name', assert => {
         age: 25
     }];
     //act
-    const sorted = sortByFirstName(contacts);
+    const sorted = sortContacts(contacts, sortChoice);
     //assert
     assert.deepEqual(sorted, expected);
 });
 
 test('sort by age', assert => {
     //arrange
+    const sortChoice = { property: 'age' };
     const contacts = [{
         name: 'Megan',
         age: 1
@@ -86,7 +77,7 @@ test('sort by age', assert => {
         age: 25
     }];
     //act
-    const sorted = sortByAge(contacts);
+    const sorted = sortContacts(contacts, sortChoice);
     //assert
     assert.deepEqual(sorted, expected);
 });
