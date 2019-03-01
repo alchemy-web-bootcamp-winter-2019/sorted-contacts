@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorted Contacts</title>
-    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="./src/css/main.css">
 </head>
 <body>
     <header>
         <img src="assets/alchemy-logo.png" alt="Alchemy Code Lab Logo">
         <h1>Sorted Contacts</h1>
     </header>
+    <main>
+        <p>Sort on:
+            <select id="sort-selection">Sort on:
+                <option disabled selected value=""></option>
+                <option value="isActive">Active</option>
+                <option value="balance">Balance</option>
+                <option value="firstName">First Name</option>
+                <option value="lastName">Last Name</option>
+                <option value="age">Age</option>
+                <option value="company">Company</option>
+                <option value="email">Email</option>
+                <option value="favoriteFruit">Favorite Fruit</option>
+            </select>
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Active</th>
+                    <th>Balance</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Picture</th>
+                    <th>Age</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Favorite Fruit</th>
+                </tr>
+            </thead>
+            <tbody id="contacts-table">
 
-    <script type="module" src="src/index.js"></script>
+            </tbody>
+        </table>
+    </main>
+    <script type="module" src="./src/index.js"></script>
 </body>
 </html>
