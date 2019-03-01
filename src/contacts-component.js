@@ -1,5 +1,3 @@
-import contacts from '../data/contacts.js';
-
 export function makeContactRow(contact) {
     const currencyOption = { style: 'currency', currency: 'USD' };
     const html = /*html*/`
