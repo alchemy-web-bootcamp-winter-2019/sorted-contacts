@@ -11,6 +11,25 @@ header {
     align-items: center;
 }
 
+#table-data {
+    border: 2px solid black;
+    width: 1200px;
+    border-collapse: collapse;
+}
+
+#table-data thead {
+    background: black;
+    color: white;
+}
+
+tr {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: yellowgreen;
+}
+
 h1 {
     margin-left: 20px;
 }
