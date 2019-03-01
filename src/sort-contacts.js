@@ -10,5 +10,5 @@ export default function sortContacts(contacts, sortChoice) {
         }
         return -1;
     });
-
 }
+
