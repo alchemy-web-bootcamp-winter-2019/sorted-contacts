@@ -1,6 +1,17 @@
 const test = QUnit.test;
 
+function sortByFirstName(contacts) {
+    return contacts.sort((a, b) => {
+        if(a.name === b.name) {
+            return 0;
+        }
+        if(a.name > b.name) {
+            return 1;
+        }
+        return -1;
+    });
 
+}
 test('sort by first name', assert => {
     //arrange
     const contacts = [{
