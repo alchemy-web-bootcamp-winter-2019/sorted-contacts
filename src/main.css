@@ -14,3 +14,22 @@ header {
 h1 {
     margin-left: 20px;
 }
+
+table {
+    border-collapse: collapse;
+    border: 1px solid cornflowerblue;
+    width: 700px;
+}
+
+#contact-table th {
+    background-color: cornflowerblue;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(100, 148, 237, 0.308)
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
