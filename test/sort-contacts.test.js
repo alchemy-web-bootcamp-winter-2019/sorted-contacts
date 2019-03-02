@@ -1,4 +1,4 @@
-import sortContacts from '../src/sort-contacts.js';
+// import sortContacts from '../src/sort-contacts.js';
 
 const test = QUnit.test;
 
@@ -9,19 +9,36 @@ QUnit.module('make sort contacts function');
 //we can express this by passing in another argument which will stand 
 //these different sorting options
 
+export default function sortContacts(contact, sortOptions){
+    const property = sortOptions.property;
+
+    return contact.sort((a, b) => {
+        if(a[property] === b[property]){
+            return 0;
+        }
+        if(a[property] < b[property]){
+            return -1;
+        }
+        if(a[property] > b[property]){
+            return 1;
+        }
+    });
+}
+
+
 const contact = [
     {
-        age: 987,
-        firstName: 'Frank'
-    },      
+        firstName: 'Zelda',
+        age: 13
+    },
     {
         firstName: 'Mary',
         age: 15
     },
     {
-        firstName: 'Zelda',
-        age: 13
-    }
+        age: 987,
+        firstName: 'Frank'
+    }      
 ];
 
 test('sort by first name', function(assert){
@@ -37,12 +54,12 @@ test('sort by first name', function(assert){
             firstName: 'Frank'
         },      
         {
-            firstName: 'Mary',
-            age: 15
+            age: 15,
+            firstName: 'Mary'
         },
         {
-            firstName: 'Zelda',
-            age: 13
+            age: 13,
+            firstName: 'Zelda'
         }
     ];
 
@@ -60,17 +77,17 @@ test('sort by age', function(assert){
     const result = sortContacts(contact, sortOptions);
     const expected = [
         {
-            age: 987,
-            firstName: 'Frank'
-        },      
-        {
-            firstName: 'Mary',
-            age: 15
+            age: 13,
+            firstName: 'Zelda'
         },
         {
-            firstName: 'Zelda',
-            age: 13
-        }
+            age: 15,
+            firstName: 'Mary'
+        },
+        {
+            age: 987,
+            firstName: 'Frank'
+        }      
     ];
 //assert
     assert.deepEqual(result, expected);
