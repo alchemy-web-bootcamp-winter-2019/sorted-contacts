@@ -1,4 +1,4 @@
-// import sortContacts from '../src/sort-contacts.js';
+import sortContacts from '../src/sort-contacts.js';
 
 const test = QUnit.test;
 
@@ -9,21 +9,6 @@ QUnit.module('make sort contacts function');
 //we can express this by passing in another argument which will stand 
 //these different sorting options
 
-export default function sortContacts(contact, sortOptions){
-    const property = sortOptions.property;
-
-    return contact.sort((a, b) => {
-        if(a[property] === b[property]){
-            return 0;
-        }
-        if(a[property] < b[property]){
-            return -1;
-        }
-        if(a[property] > b[property]){
-            return 1;
-        }
-    });
-}
 
 
 const contact = [
