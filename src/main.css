@@ -1,5 +1,5 @@
 body {
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 * {
@@ -9,6 +9,25 @@ body {
 header {
     display: flex;
     align-items: center;
+}
+
+#table-data {
+    border: 2px solid black;
+    width: 1200px;
+    border-collapse: collapse;
+}
+
+#table-data thead {
+    background: black;
+    color: white;
+}
+
+tr {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: yellowgreen;
 }
 
 h1 {
