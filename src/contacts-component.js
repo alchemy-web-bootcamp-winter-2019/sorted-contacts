@@ -1,7 +1,7 @@
 
 export default function makeContactRows(singleContact){
     const html = /*html*/ `<tr>
-    <td>${singleContact.id}</td>
+    <td>${singleContact._id}</td>
     <td>${singleContact.isActive ? 'yes' : 'no'}</td>
     <td>${singleContact.balance}</td>
     <td>
@@ -24,8 +24,15 @@ export default function makeContactRows(singleContact){
 const renderContactRows = document.getElementById('table-body');
 
 export function loadContact(contacts){
+    clearRows();
     contacts.forEach(contact => {
         const dom = makeContactRows(contact);
         renderContactRows.appendChild(dom);
     });
+}
+
+function clearRows(){
+    while(renderContactRows.children.length > 0){
+        renderContactRows.lastElementChild.remove();
+    }
 }

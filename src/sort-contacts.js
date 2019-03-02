@@ -1,5 +1,5 @@
 export default function sortContacts(contact, sortOptions){
-    const property = Object.keys(sortOptions);
+    const property = sortOptions.property;
 
     return contact.sort((a, b) => {
         if(a[property] === b[property]){

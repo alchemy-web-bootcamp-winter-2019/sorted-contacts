@@ -1,4 +1,4 @@
-const listSort = document.getElementById('list-sort')
+const listSort = document.getElementById('list-sort');
 
 export default function loadSort(callback){
     listSort.addEventListener('change', () => {
