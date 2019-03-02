@@ -19,10 +19,10 @@ The file `data/contacts.js` contains an array of 50 faux contacts
     1. import `contacts`
     1. import `loadContacts`
     1. call `loadContacts` with `contacts` -->
-1. TDD `sort-contacts` function
+<!-- 1. TDD `sort-contacts` function
     1. takes array of contacts and sort object with field
     1. returns sorted array
-    1. when done, move to `sort-contacts.js` file
+    1. when done, move to `sort-contacts.js` file -->
 1. Add Sort Component
     1. File `sort-component.js`
     1. Reference (make a variable for) `<select>` element
