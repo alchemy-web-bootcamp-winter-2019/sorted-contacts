@@ -1,4 +1,3 @@
-//makeContactRow template function (named export);
 export function makeContactTemplate(contact) {
     const html = `
     <tr>
@@ -16,7 +15,6 @@ export function makeContactTemplate(contact) {
     return template.content;
 }
 
-//load contacts default export function
 const tableBody = document.getElementById('table-body');
 export default function loadContacts(contacts) {  
     while(tableBody.firstChild) {
