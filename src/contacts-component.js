@@ -18,13 +18,14 @@ export function makeContactTemplate(contact) {
 
 //load contacts default export function
 const tableBody = document.getElementById('table-body');
-export default function loadContacts(contacts){
-
+export default function loadContacts(contacts) {  
+    while(tableBody.firstChild) {
+        tableBody.removeChild(tableBody.firstChild);
+    }  
     contacts.forEach((contact) => {
         const dom = makeContactTemplate(contact);
         tableBody.appendChild(dom);
-     
     });
+    
 
 }
-
