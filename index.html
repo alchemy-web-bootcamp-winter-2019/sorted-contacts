@@ -10,14 +10,24 @@
 
 <body>
     <main>
+        <select name="sort-select" id="sort-select">
+            <option value="" disabled selected>Sort Options</option>
+            <option value="isActive">Is Active</option>
+            <option value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="company">Company</option>
+            <option value="email">Email</option>
+            <option value="fruit">Favorite Fruit</option>
+        </select>
     <header>Sorted Contacts</header>
     <table>
             <tr>
                 <th>Active</th>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>Company</th>
                 <th>Email</th>
-                <th>Fruit</th>
+                <th>Favorite Fruit</th>
             </tr>
         <tbody id="table-body">
         </tbody>

@@ -5,6 +5,8 @@ export function makeContactTemplate(contact) {
     <td>${contact.isActive ? 'Yes' : 'No'}</td> 
     <td>${contact.firstName}</td> 
     <td>${contact.lastName}</td> 
+    <td>${contact.company}</td> 
+    <td>${contact.email}</td> 
     <td>${contact.favoriteFruit}</td> 
     </tr>
     `;
