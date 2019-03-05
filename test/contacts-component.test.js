@@ -7,6 +7,8 @@ const contacts = {
     isActive: true,
     firstName: 'Cantu',
     lastName: 'Sullivan',
+    company: 'IDETICA',
+    email: 'cantu.sullivan@idetica.com',
     favoriteFruit: 'banana'
 };
 
@@ -21,6 +23,8 @@ test('make contact row template', assert => {
     <td>Yes</td> 
     <td>Cantu</td> 
     <td>Sullivan</td> 
+    <td>IDETICA</td>
+    <td>cantu.sullivan@idetica.com</td>
     <td>banana</td> 
     </tr>
     `);
