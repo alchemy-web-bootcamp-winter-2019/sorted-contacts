@@ -1,4 +1,10 @@
 import contacts from '../data/contacts.js';
+import loadContacts from './contacts-component.js';
+import loadSort from './sort-component.js';
+import sortByProperty from './sort-by-property.js';
 
-// eslint-disable-next-line no-console
-console.log(contacts);
+loadContacts(contacts);
+loadSort(sortChoices => {
+    const sortedContacts = sortByProperty(contacts, sortChoices);
+    loadContacts(sortedContacts);
+});
